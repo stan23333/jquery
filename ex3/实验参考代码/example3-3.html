@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="jquery-1.12.4.js" type="text/javascript"></script>
+  <script type="text/javascript">
+        $(function(){
+           //输入代码
+           var $li=$("<li>哈密瓜</li>");
+           $("li:eq(2)").after($li);
+           $("li:lt(2)").clone().appendTo("ul");
+         });
+  </script>
+</head>
+<body>
+  <p title="选择你最喜欢的水果">你最喜欢的水果是？</p>
+    <ul>
+        <li>苹果</li>
+        <li>橘子</li>
+        <li>菠萝</li>
+        <li>雪梨</li>
+    </ul>
+</body>
+</html>

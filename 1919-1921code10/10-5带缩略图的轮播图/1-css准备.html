@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>带缩略图的焦点图</title>
+	<style>
+		body,ul,h3{
+			margin:0;
+			padding:0;
+		}
+		ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		img{
+			border:0;
+		}
+		.focus{
+			width: 700px;
+			margin:10px auto;
+			background-color: #000;
+		}
+		.focus .bigimg{
+			height:320px;
+			position: relative;
+		}
+		.focus .bigimg ul{
+			height: 100%;
+		}
+		.focus .bigimg li{
+			display: none;
+		}
+		.focus .bigimg li.current{
+			display: block;
+		}
+		.focus .bigimg a{
+			display: block;
+			overflow: hidden;
+		}
+		.focus .bigimg .tip{
+			width:700px;
+			height:50px;
+			line-height: 50px;
+			position: absolute;
+			bottom:0px;
+			background-color: rgba(0,0,0,0.8);
+		}
+		.focus .bigimg .tip h3{
+			float: left;
+			width:85%;
+			padding-left: 20px; 
+			font-size: 24px;
+			color: #6f3;
+		}
+		.focus .bigimg .tip span{
+			float: left;
+			width: 30px;
+			height: 30px;
+			margin-top:10px;
+			display: block;	
+		}
+		.focus .bigimg .tip span.prev{
+			background:url(../images/icon_focus_switch.png) no-repeat 0 0;
+		}
+		.focus .bigimg .tip span.prev:hover{
+			background:url(../images/icon_focus_switch.png) no-repeat -30px 0;
+		}
+		.focus .bigimg .tip span.next{
+			background:url(../images/icon_focus_switch.png) no-repeat -60px 0;
+		}
+		.focus .bigimg .tip span.next:hover{
+			background:url(../images/icon_focus_switch.png) no-repeat -90px 0;
+		}
+
+		.focus .smallimg{
+			padding: 10px 0;
+		}
+		.focus .smallimg ul {
+			margin-left: 4px;
+		    overflow: hidden;
+		}
+		.focus .smallimg li{
+			float: left;
+			width: 60px;
+			margin: 0 4px 0 5px;
+			overflow:hidden;
+			position: relative;
+		}
+		.focus .smallimg img{
+			width: 60px;
+		}
+		.focus .smallimg span.mask{
+			width: 60px;
+			height: 60px;
+			display: block;
+			position: absolute;
+			left: 0;
+			top:0;
+			background-color: rgba(0,0,0,0.4);
+		}
+		.focus .smallimg span.border{
+			display: none;
+			width: 54px;
+			position: absolute;
+			left:0;
+			bottom: 0;
+			border: 3px solid #98E404;
+		}
+	</style>
+</head>
+<body>
+	<div class="focus">
+		<!-- 大图部分 -->
+		<div class="bigimg">
+			<ul>
+				<li class="current"><a href="#"><img src="images/b01.jpg" alt="第1张图的描述信息"></a></li>
+				<li><a href="#"><img src="images/b02.jpg" alt="第2张图的描述信息"></a></li>
+				<li><a href="#"><img src="images/b03.jpg" alt="第3张图的描述信息"></a></li>
+				<li><a href="#"><img src="images/b04.jpg" alt="第4张图的描述信息"></a></li>
+				<li><a href="#"><img src="images/b05.jpg" alt="第5张图的描述信息"></a></li>
+				<li><a href="#"><img src="images/b06.jpg" alt="第6张图的描述信息"></a></li>
+				<li><a href="#"><img src="images/b07.jpg" alt="第7张图的描述信息"></a></li>
+				<li><a href="#"><img src="images/b08.jpg" alt="第8张图的描述信息"></a></li>
+				<li><a href="#"><img src="images/b09.jpg" alt="第9张图的描述信息"></a></li>
+				<li><a href="#"><img src="images/b10.jpg" alt="第10张图的描述信息"></a></li>
+			</ul>
+			<div class="tip">
+				<h3>第1张图的描述信息</h3>
+				<span class="prev"></span>
+				<span class="next"></span>
+			</div>
+		</div>
+		<!-- 小图部分 -->
+		<div class="smallimg">	
+			<ul>
+				<li>
+					<img src="images/small01.jpg">
+					<span class="mask" style="display: none;"></span>
+					<span class="border" style="display: block;"></span>
+				</li>
+                <li>
+					<img src="images/small02.jpg">
+					<span class="mask"></span>
+					<span class="border"></span>
+				</li>
+                <li>
+					<img src="images/small03.jpg">
+					<span class="mask"></span>
+					<span class="border"></span>
+				</li>
+                <li>
+					<img src="images/small04.jpg">
+					<span class="mask"></span>
+					<span class="border"></span>
+				</li>
+                <li>
+					<img src="images/small05.jpg">
+					<span class="mask"></span>
+					<span class="border"></span>
+				</li>
+                <li>
+					<img src="images/small06.jpg">
+					<span class="mask"></span>
+					<span class="border"></span>
+				</li>
+                <li>
+					<img src="images/small07.jpg">
+					<span class="mask"></span>
+					<span class="border"></span>
+				</li>
+                <li>
+					<img src="images/small08.jpg">
+					<span class="mask"></span>
+					<span class="border"></span>
+				</li>
+                <li>
+					<img src="images/small09.jpg">
+					<span class="mask"></span>
+					<span class="border"></span>
+				</li>
+                <li>
+					<img src="images/small10.jpg">
+					<span class="mask"></span>
+					<span class="border"></span>
+				</li>
+			</ul>		
+		</div>
+	</div>
+</body>
+</html>

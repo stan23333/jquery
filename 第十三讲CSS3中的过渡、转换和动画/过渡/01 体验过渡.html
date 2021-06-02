@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>体验过渡</title>
+	<style>
+		/* CSS3提供的为补间动画 */
+		.box {
+			width: 200px;
+			height: 200px;
+			margin: 50px auto;
+			background-color: blue;
+			/* 使用 属性 transition 来实现过渡效果 */
+			/*transition-property: width,height;
+			transition-duration: 2s;
+			transition-timing-function: linear;
+			transition-delay: 2s;  */ 
+			/*transition: width 2s linear 2s;*/
+			 /*transition: background-color 5s, width 3s, height 8s; */
+				transition: all 2s ease-out;		
+		}
+		.box:hover {
+			width: 400px;
+			height:400px;
+			background-color: green;
+			border-radius: 50%;
+		
+
+		}
+		.dong {
+			width: 400px;
+			height: 400px;
+			background-color: yellow;
+			border-radius: 50%;
+		}
+
+		/* 1、必须满足两个状态 */
+		/* 2、能够触发两种状态的切换*/
+		/* 	  a) 通过hover 只是触发状态切换的一种方式 */
+	</style>
+	
+</head>
+<body>
+	<button>过渡</button>
+	<div class="box"></div>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+		  $("button").click(function(){
+		  	$(".box").addClass("dong");
+		  })
+         // $(".box").hover(function(){
+         // 	$(this).toggleClass("dong");
+         // });
+		})
+	</script>
+</body>
+</html>

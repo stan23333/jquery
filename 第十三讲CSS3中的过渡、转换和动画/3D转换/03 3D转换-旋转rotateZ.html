@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS 3D转换</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+
+		.rotateZ {
+			height: 226px;
+			padding-top: 100px;
+			text-align: center;
+		}
+
+		.rotateZ img {
+			transition: all 3s;
+		}
+
+		.rotateZ:hover img {
+			transform: rotateZ(-180deg);
+			/* 四个参数 */
+			/* 前三个分别对应 x y z 取值 1 或 0 */
+			/* 当取值为 1 表示该轴发生旋转，值为 0 则相反 */
+
+			/* 第四个参数为旋转的度数 */
+			
+			transform: rotate3d(1, 1, 0, 180deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="rotateZ">
+		<img src="./images/z.jpg" alt="">
+	</div>
+</body>
+</html>

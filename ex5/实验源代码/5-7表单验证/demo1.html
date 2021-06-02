@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body { font:12px/19px Arial, Helvetica, sans-serif; color:#666;}
+form div { margin:5px 0;}
+.int label { float:left; width:100px; text-align:right;}
+.int input { padding:1px 1px; border:1px solid #ccc;height:16px;}
+.sub { padding-left:100px;}
+.sub input { margin-right:10px; }
+.formtips{width: 200px;margin:2px;padding:2px;}
+.onError{
+    background:#FFE0E9 url(../img/reg3.gif) no-repeat 0 center;
+	padding-left:25px;
+}
+.onSuccess{
+    background:#E9FBEB url(../img/reg4.gif) no-repeat 0 center;
+	padding-left:25px;
+}
+.high{
+    color:red;
+}
+	</style>
+</head>
+<form method="post" action="">
+	<div class="int">
+		<label for="username">用户名:</label>
+		<input type="text" id="username" class="required" />
+	</div>
+	<div class="int">
+		<label for="email">邮箱:</label>
+		<input type="text" id="email" class="required" />
+	</div>
+	<div class="int">
+		<label for="personinfo">个人资料:</label>
+		<input type="text" id="personinfo" />
+	</div>
+	<div class="sub">
+		<input type="submit" value="提交" id="send"/><input type="reset" id="res"/>
+	</div>
+</form>
+</body>
+</html>

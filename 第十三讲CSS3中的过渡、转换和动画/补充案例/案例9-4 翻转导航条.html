@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>翻转导航条</title>
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+nav{
+	width: 960px;
+	height: 40px;
+	background-color: #ccc;
+	margin: 100px auto;
+}
+nav ul{
+	list-style: none;
+}
+nav ul li{
+	float: left;
+	width: 120px;
+	height: 40px;
+}
+nav ul li div{
+	width: 120px;
+	height: 40px;
+	position: relative;
+	-webkit-perspective:6000px;
+	transition:all 0.4s ease 0s;
+	-webkit-transform-style:preserve-3d;
+}
+nav ul li:hover>div{
+	-webkit-transform:rotateX(-90deg);
+}
+nav ul li span{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 120px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+}
+nav ul li span.no1{
+	background-color: green;
+	-webkit-transform:translateZ(20px);
+}
+nav ul li span.no2{
+	background-color: pink;
+	-webkit-transform:rotateX(90deg) translateZ(20px);
+}
+</style>
+</head>
+<body>
+<nav>
+<ul>
+  <li>
+      <div>
+          <span class="no1">UI设计培训</span>
+          <span class="no2">UI设计培训</span>
+      </div>
+  </li>
+  <li>
+      <div>
+          <span class="no1">PHP培训</span>
+          <span class="no2">PHP培训</span>
+      </div>
+  </li>
+  <li>
+      <div>
+          <span class="no1">网络营销培训</span>
+          <span class="no2">网络营销培训</span>
+      </div>
+  </li>
+  <li>
+      <div>
+          <span class="no1">前端开发培训</span>
+          <span class="no2">前端开发培训</span>
+      </div>
+  </li>
+  <li>
+      <div>
+          <span class="no1">C++培训</span>
+          <span class="no2">C++培训</span>
+      </div>
+  </li>
+  <li>
+      <div>
+          <span class="no1">IOS培训</span>
+          <span class="no2">IOS培训</span>
+      </div>
+  </li>
+  <li>
+      <div>
+          <span class="no1">Android培训</span>
+          <span class="no2">Android</span>
+      </div>
+  </li>
+  <li>
+        <div>
+            <span class="no1">云计算培训</span>
+            <span class="no2">云计算培训</span>
+        </div>
+    </li>
+</ul>
+</nav>
+</body>
+</html>

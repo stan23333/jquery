@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset = "utf-8">
+  <title>复选框效果</title>
+  <style type = "text/css">
+	td{
+		text-align:center;
+	    font-size:24px;
+	    line-height:36px;
+	}
+	input{
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+	}
+    input[type=button]{
+        width: 100px;
+    }
+  </style>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    //输入代码
+      $(function(){
+      //点击全选按钮后，根据全选按钮的选中状态来控制下面所有子复选框的状态
+        $("#all").click(function(){
+             var ch=this.checked;
+            $("input[name=product]").each(function(){
+               this.checked=ch;
+            })
+        })
+      // 单击下面的单个复选框时，需要根据当前下面所有复选框的状态来确定全选复选框的状态，当下面所有复选框都选中时，全选复选框才选中，否则全选复选框不能选中。
+        $("input[name=product]").click(function(){
+           if($("input[name=product]:checked").length==$("input[name=product]").length)
+            $("#all")[0].checked=true;
+          else $("#all")[0].checked=false;
+        })
+    })
+  </script>
+</head>
+<body>
+  <table  border = "1" cellspacing = "0" cellpadding = "0"  width = "600px;" id="tb1" >
+    <tr>
+      <td>
+      <input type = "checkbox" id = "all"  value =  "全选" />全选
+      </td>
+    	<td>商品名称</td>
+    	<td>价格</td>
+    </tr>
+    <tr>
+    	<td><input type = "checkbox" name = "product" /></td>
+        <td>网页设计</td>
+        <td>25</td>
+    </tr>
+    <tr>
+    	<td><input type = "checkbox" name = "product" /></td>
+    	<td>css + div布局</td>
+    	<td>26</td>
+    </tr>
+    <tr>
+    	<td><input type = "checkbox" name = "product" /></td>
+    	<td>JavaScript程序设计</td>
+    	<td>28</td>
+    </tr>
+    <tr>
+      <td><input type = "checkbox" name = "product"  /></td>
+      <td>JQuery程序设计</td>
+      <td>28</td>
+    </tr>
+  </table>
+</body>
+</html>

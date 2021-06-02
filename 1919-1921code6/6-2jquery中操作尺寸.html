@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			padding: 30px;
+			border:10px solid red;
+			margin:20px;
+		}
+	</style>
+	<script src="libs/jquery-1.12.4.js"></script>
+</head>
+<body>
+	<div id="d1"></div>
+	<script>
+	    //获取的是content区的大小
+		console.log($("#d1").width());
+		console.log($("#d1").height());
+		//获取的是content区+padding的大小
+		console.log($("#d1").innerWidth());
+		console.log($("#d1").innerHeight());
+		//获取的是content区+padding+border的大小
+		console.log($("#d1").outerWidth());
+		console.log($("#d1").outerHeight());
+		//获取的是content区+padding+border+margin的大小
+		console.log($("#d1").outerWidth(true));
+		console.log($("#d1").outerHeight(true));
+		//$("#d1").width(400);
+		//$("#d1").css("width",400);
+	</script>
+</body>
+</html>

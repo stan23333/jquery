@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    body{
+	    	padding: 0;
+	    	margin:0;
+	    	height: 2500px;
+	    }
+	   .rocket{
+	   	width:150px;
+	   	height: 150px;
+	   	position: fixed;
+	   	right:40px;
+	   	bottom: 10px;
+	   	display: none;
+	   }
+	   .rocket>img{
+	   	width:100%;
+	   	display: block;
+	   }
+	</style>
+	<script src="libs/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$(window).scroll(function(){
+				if($(window).scrollTop()>=1000)
+					$(".rocket").fadeIn(1000);
+				else $(".rocket").fadeOut(1000);
+			})
+			$(".rocket").click(function(){
+				$(this).animate({top:10},3000);
+				$("html,body").animate({scrollTop:0},3000);
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="rocket">
+	   <img src="img/rocket1.jpg" alt="">
+	</div>
+</body>
+</html>

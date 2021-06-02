@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{
+	padding:0;
+	margin:0;}
+body{
+	margin:50px;}
+.content{
+	width:540px;}
+.scroll_top{
+	height:51px;
+	background:url(images/dd_scroll_top.gif) no-repeat;
+	}
+.scroll_mid ul{
+	list-style:none;}
+.scroll_mid{
+	background-color:#f2f2f3;
+	border-left:1px solid #d6d5d6;
+	border-right:1px solid #d6d5d6;
+	height:180px;
+	padding:5px 0 0 5px;
+	overflow:hidden;
+	position:relative;
+	}
+.scroll_img>li>img{
+	display: block;
+}
+.scroll_number{
+	position:absolute;
+	right:10px;
+	top:15px;
+}
+.scroll_number li{
+	width:13px;
+	height:16px;
+	font-size:12px;
+	border:1px solid #999;
+	margin-top:5px;
+	text-align:center;}
+.scroll_end{
+	height:8px;
+	background:url(images/dd_scroll_end.gif) no-repeat;}
+.scroll_number_hover{
+	background-color:#FC3;
+	color:#fff;}
+</style>
+<script src="jquery-3.1.0.min.js" type="text/javascript"></script>
+<script>
+$(function(){
+    //输入代码
+	})
+</script>
+</head>
+<body>
+<div class="content">
+  <div class="scroll_top"></div>
+  <div class="scroll_mid">
+     <ul class="scroll_img">
+       <li><img src="images/dd_scroll_1.jpg"></li>
+       <li><img src="images/dd_scroll_2.jpg"></li>
+       <li><img src="images/dd_scroll_3.jpg"></li>
+       <li><img src="images/dd_scroll_4.jpg"></li>
+       <li><img src="images/dd_scroll_5.jpg"></li>
+       <li><img src="images/dd_scroll_6.jpg"></li>
+     </ul>
+     <ul class="scroll_number">
+       <li>1</li>
+       <li>2</li>
+       <li>3</li>
+       <li>4</li>
+       <li>5</li>
+       <li>6</li>
+     </ul>
+  </div>
+  <div class="scroll_end"></div>
+</div>
+</body>
+</html>

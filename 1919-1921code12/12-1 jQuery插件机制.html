@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery插件机制</title>
+	<style>
+		.box{
+			width:150px;
+			height: 150px;
+			text-align: center;
+			line-height: 150px;
+			background-color: pink;
+		}
+	</style>
+	<script src="libs/jquery-1.12.4.js"></script>
+</head>
+<body>
+	<div class="box">河南科技大学</div>
+	<p class="xy">软件学院</p>
+	<input type="button" value="按钮1">
+	<script>
+		console.log($.fn);
+		$.fn.fgAndBg=function(fg,bg){
+			//this代表当前使用该方法的jQuery对象
+			console.log(this);
+			this.css({
+				color:fg,
+				backgroundColor:bg
+			});
+			/*$(this).css({
+				color:'red',
+				backgroundColor:'#ccc'
+			});*/
+		}
+		$(".box").fgAndBg('red','gray');
+		$(".xy").fgAndBg('#fff','blue');
+		$("input[type=button]").click(function(){
+			console.log(this);   //此处的this是原生DOM对象
+			$(this).val("点击完毕！");
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS 2D转换</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+
+		/*理解2D坐标 Y轴正方向向下，X轴正方向右*/
+
+		/* 2D 包括 元素的 位置移动、大小缩放、旋转 */
+
+		.translate {
+			width: 100%;
+			height: 200px;
+			background-color: pink;
+			position: relative;
+		}
+		
+		.translate img {
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			left: 100px;
+			top: 150px;
+			transform-origin:right top;
+			transition: all 5s;
+		}
+		/* 位置参照是元素原来的位置，与定位relative类似 */
+		.translate:hover img{
+		    transform:scale(0.5) rotate(360deg) ;
+		}
+	</style>
+</head>
+<body>
+	<div class="translate">
+		<img src="images/fc.jpg" alt="">
+	</div>
+</body>
+</html>

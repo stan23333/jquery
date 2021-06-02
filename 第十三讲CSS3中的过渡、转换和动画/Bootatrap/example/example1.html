@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>表格</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+         <tr><th>姓名</th><th>性别</th><th>暂住地</th><th>操作</th></tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>张山</td><td>男</td><td>浙江宁波</td><td><a href="####" class="btn btn-info">删除</a></td></tr>
+         <tr>
+            <td>李四</td><td>女</td><td>浙江杭州</td><td><a href="####" class="btn btn-info">删除</a></td></tr>
+         <tr class="info">
+            <td>王五</td><td>男</td><td>湖南长沙</td><td><a href="####" class="btn btn-info">删除</a></td></tr>
+         <tr>
+            <td>赵六</td><td>男</td><td>浙江温州</td><td><a href="####" class="btn btn-info">删除</a></td></tr>
+         <tr>
+            <td>Rain</td><td>男</td><td>浙江杭州</td><td><a href="####" class="btn btn-info">删除</a></td></tr>
+         <tr>
+            <td>MAXMAN</td><td>女</td><td>浙江杭州</td><td><a href="####" class="btn btn-info">删除</a></td></tr>
+         <tr>
+            <td>MAXMAN</td><td>女</td><td>浙江杭州</td><td><a href="####" class="btn btn-info">删除</a></td></tr>
+      </tbody>
+   </table>
+  </div>
+  <!-- 图片轮播 -->
+     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+  <!-- 轮播（Carousel）指标 -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+  </ol>   
+  <!-- 轮播（Carousel）项目 -->
+
+  <div class="carousel-inner">
+    <div class="item active">
+    <img class="img-responsive" src="images/img0.jpg" alt="">
+    <div class="carousel-caption">图片1</div>
+    </div>
+    <div class="item">
+    <img class="img-responsive" src="images/img1.jpg" alt="">
+    <div class="carousel-caption">图片2</div>
+    </div>
+    <div class="item">
+    <img class="img-responsive" src="images/img2.jpg" alt="">
+    <div class="carousel-caption">图片3</div>
+    </div>
+    <div class="item">
+    <img class="img-responsive" src="images/img3.jpg" alt="">
+    <div class="carousel-caption">图片4</div>
+    </div>
+    <div class="item">
+    <img class="img-responsive" src="images/img4.jpg" alt="">
+    <div class="carousel-caption">图片5</div>
+    </div>
+  </div>
+  <!-- 轮播（Carousel）导航 -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+  </a>
+</div>
+
+  <!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">你确定要删除吗？</h4>
+            </div>
+            <div class="modal-body">你现在正在删除的是“张三”的相关信息。</div>
+            <div class="modal-footer">
+                
+                <button type="button" class="btn btn-primary" id="okBtn">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $(function(){
+      $("table a").click(function(){
+        $("#myModal").modal("show");
+        var ss=$(this);
+        $("#okBtn").click(function(){
+            $("#myModal").modal("hide");
+            ss.parents("tr").remove();
+      })
+     })
+    }) 
+    </script>
+  </body>
+</html>

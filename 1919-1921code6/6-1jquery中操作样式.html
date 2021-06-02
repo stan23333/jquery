@@ -1,0 +1,85 @@
+=<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作样式</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			margin:10px;
+		}
+		.special{
+			color:red;
+			font-size: 24px;
+			font-weight: bold;
+		}
+		.bg{
+			background-color: yellow;
+		}
+		button{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+		.circle{
+			border-radius: 50%;
+			background-color: skyblue;
+			color: red;
+		}
+	</style>
+	<script src="libs/jquery-1.12.4.js"></script>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<p>段落1</p>
+	<p class="special bg">段落2</p>
+	<p>段落3</p>
+	<p>段落4</p>
+	<button>点击进行切换</button>
+	<script>
+		$("div").click(function(){
+			$(this).css({
+				width:"200px",    //如果带上单位，注意要将属性值加上引号
+				height:"200px",
+				"background-color":"skyblue",
+				color:"red"
+			});
+		});
+        /*原生js中通过className属性添加类别*/
+		var ps=document.getElementsByTagName('p');
+		ps[0].className="special";
+		ps[0].className="bg";  //原生js中，通过设置className属性给元素添加类别，后面设置的会覆盖前面的
+		//如果希望为该p元素同时应用special和bg的类别
+		ps[0].className="special bg";
+
+		//ps[1].className="";
+        
+        /*jquery中通过addClass方法添加类别*/
+        $("p:eq(2)").addClass("special");
+        $("p:eq(2)").addClass("bg");    //addClass方法属于追加形式
+        // $("p:eq(2)").addClass("special bg");
+        $("p:eq(1)").removeClass();
+        //$("p:eq(1)").removeClass("bg");
+
+        // $("p:eq(3)").attr('class','special');
+        // $("p:eq(3)").attr('class','bg');//jquery中，通过attr()方法给元素添加类别，后面设置的会覆盖前面的
+        $("p:eq(3)").attr('class','special bg');
+        $("p:eq(3)").removeAttr('class');
+        $("p:eq(3)").attr('id','p4');
+        //为切换按钮添加单击事件
+        $("button").click(function(){
+        	/*if($(this).hasClass("circle"))
+        		$(this).removeClass("circle");
+        	else
+        		$(this).addClass("circle");*/
+        	$(this).toggleClass("circle");
+        });
+	</script>
+</body>
+</html>          
+	

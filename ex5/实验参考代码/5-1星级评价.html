@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>星级评价</title>
+    <style>
+  ul{
+    padding: 0;
+    margin:0;
+  }
+  li{
+    list-style: none;
+    float:left;
+    font-size: 30px;
+    color: red;
+  }
+</style>
+    <script src="jquery-1.12.4.js"></script>
+  </head>
+  <body>
+    <ul class="comment">
+      <li>☆</li>
+      <li>☆</li>
+      <li>☆</li>
+      <li>☆</li>
+      <li>☆</li>
+    </ul>
+    <script>
+        // 为li元素注册mouseover事件
+        $('.comment>li').mouseover(function(){
+            // $(this).text('★').prevAll().text('★');
+            //$(this).nextAll().text('☆');
+            $(this).text('★').prevAll().text('★').end().nextAll().text('☆');
+        });
+        // 为li元素注册mouseout事件
+        $('.comment>li').mouseout(function(){
+            $('.comment').find('li').text('☆');
+            $('.comment>li.on').text('★').prevAll().text('★');
+        });
+        // 为li元素注册click事件
+        $('.comment>li').click(function(){
+            $(this).addClass("on").siblings().removeClass("on");
+        });
+    </script>
+</body>
+</html>

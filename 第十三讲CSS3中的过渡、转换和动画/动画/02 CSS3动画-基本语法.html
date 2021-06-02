@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 动画</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+
+		.box {
+			width: 400px;
+			margin: 100px auto;
+		}
+
+		.box img {
+			width: 100%;
+
+			/* 将定义好的动画序列应用于特定元素 */
+			animation: zhuan 2s infinite linear;
+		}
+
+		/* 第一步 定义动画序列（关键帧） */
+
+		@keyframes zhuan {
+			/* 语法 */
+
+			/*from {
+				transform: rotate(0deg);
+			}
+
+			to {
+				transform: rotate(360deg);
+			}*/
+
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="images/fengche.png">
+	</div>
+</body>
+</html>

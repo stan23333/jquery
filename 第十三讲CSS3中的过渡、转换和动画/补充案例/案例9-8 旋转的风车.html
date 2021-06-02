@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>旋转的风车</title>
+<style type="text/css">
+.loading{
+	width:1024px;
+	height:606px;
+	margin:0 auto;
+	background:url(images/bg02.jpg);
+	position:relative;
+	z-index:2}
+.pic{
+	width:427px;
+	height:430px;
+	background:url(images/fc.png);
+	position:absolute;
+	right:215px;
+	top:176px;
+	z-index:1;
+	-webkit-animation:load 2s linear 1s infinite;
+	-moz-animation:load 2s linear 1s infinite;
+	-ms-animation:load 2s linear 1s infinite;
+	-o-animation:load 2s linear 1s infinite;
+	animation:load 2s linear 1s infinite;
+}
+.fcc{
+	width:90px;
+	height:97px;
+	background:url(images/fcc.png);
+	position:absolute;
+	right:385px;
+	bottom:170px;
+	z-index:3;
+	}
+@-webkit-keyframes load{
+	0%{
+		transform: rotate(0);
+		-ms-transform: rotate(0);		/* IE 9 */
+		-webkit-transform: rotate(0);	/* Safari and Chrome */
+		-o-transform: rotate(0);		/* Opera */
+		-moz-transform: rotate(0);		/* Firefox */
+	}
+	100%{
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);		/* IE 9 */
+		-webkit-transform: rotate(360deg);	/* Safari and Chrome */
+		-o-transform: rotate(360deg);		/* Opera */
+		-moz-transform: rotate(360deg);		/* Firefox */
+	}
+}
+</style>
+</head>
+<body>
+<div class="loading">
+	<div class="pic"></div>
+	<div class="fcc"></div>
+</div>
+</body>
+</html>

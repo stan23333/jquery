@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body{
+		overflow: hidden;
+	}
+	div.main{
+		position: relative;
+		font-size: 30px;
+	}
+	div.main>span{
+		position: absolute;
+		width:300px;
+		text-align: center;
+		/*background-color: pink;*/
+	}
+     div.content{
+     	width:100%;
+     	line-height: 80px;
+     	background-color: #999;
+     	position: fixed;
+     	left: 0;
+     	bottom:0;
+     	text-align: center;
+     }
+      div.content>span{
+      	font-size: 20px;
+      }
+      div.content>input{
+      	height: 22px;
+      	width:240px;
+      	font-size: 18px;
+      	border-radius: 5px;
+      }
+        div.content>button{
+        	background-color: red;
+        	font-size: 18px;
+        	color: #fff;
+        	border:none;
+        }
+	</style>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+	var colors=["red","green","blue","pink","yellow","orange","purple"];
+	$(function(){
+	    //输入代码
+	})
+	</script>
+</head>
+<body>
+    <div class="main"></div>
+	<div class="content">
+		<span>吐槽:</span>
+		<input type="text" id="text">
+		<button id="btn">发送</button>
+	</div>
+</body>
+</html>

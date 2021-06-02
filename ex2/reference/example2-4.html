@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title><style type="text/css">
+*{padding:0px; margin:0px;}
+.SubCategoryBox{ width:600px; margin:20px auto; font-size:12px;}
+.SubCategoryBox ul{ list-style:none;}
+.SubCategoryBox ul li{float:left; width:200px; text-align:center;height:24px; line-height:24px;}
+.showmore { clear:both; text-align:center; padding-top:10px;}
+a {color:#04D; text-decoration:none;}
+a:hover { color:#F50; text-decoration:underline;}
+.showmore a { display:block; width:120px; margin:0 auto; line-height:24px; border:1px solid #AAA;}
+.promoted a{ color:#f50;}
+}
+</style>
+<script src="jquery-1.12.4.js" type="text/javascript"></script>
+<script>
+//输入代码
+$(function(){
+	$("li:eq(0),li:eq(2),li:eq(10)").addClass("promoted");
+	var $category=$("ul li:gt(5):not(:last)");
+	$(".showmore>a").click(function(){
+		// if($category.is(":visible")){
+		if($(this).text()=="精简显示品牌"){
+			$category.hide();
+			$(this).children("span").html("显示全部品牌");
+		    $("ul li").removeClass("promoted");
+		}
+		else{
+			$category.show();
+	        $(this).children("span").html("精简显示品牌");
+		    $("li:eq(0),li:eq(2),li:eq(10)").addClass("promoted");
+		    //$("ul li").filter(":eq(0),:eq(2),:eq(10)").addClass("promoted");
+		    //$("ul li").filter(":contains(佳能),:contains(三星),:contains(奥林巴斯)").addClass("promoted");
+		}
+	   
+	})
+})
+</script>
+</head>
+<body>
+<div class="SubCategoryBox">
+	<ul>
+		<li ><a href="#">佳能</a><i>(30440)</i></li>
+		<li ><a href="#">索尼</a><i>(27220)</i></li>
+		<li ><a href="#">三星</a><i>(20808)</i></li>
+		<li ><a href="#">尼康</a><i>(17821)</i></li>
+		<li ><a href="#">松下</a><i>(12289)</i></li>
+		<li ><a href="#">卡西欧</a><i>(8242)</i></li>
+		<li ><a href="#">富士</a><i>(14894)</i></li>
+		<li ><a href="#">柯达</a><i>(9520)</i></li>
+		<li ><a href="#">宾得</a><i>(2195)</i></li>
+		<li ><a href="#">理光</a><i>(4114)</i></li>
+		<li ><a href="#">奥林巴斯</a><i>(12205)</i></li>
+		<li ><a href="#">明基</a><i>(1466)</i></li>
+		<li ><a href="#">爱国者</a><i>(3091)</i></li>
+		<li ><a href="#">其它品牌相机</a><i>(7275)</i></li>
+	</ul>
+	<div class="showmore">
+		<a href="#"><span>精简显示品牌</span></a>
+	</div>
+</div>
+</body>
+</html>

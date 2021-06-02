@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			float:left;
+		}
+	   .divC{
+	   	padding-top:80px; 
+	   	margin:0 30px;
+	   }
+	   select{
+	   	width:122px;
+	   	height: 200px;
+	   }
+	</style>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+	  $(function(){
+	  	//输入代码
+	  })
+	</script>
+</head>
+<body>
+	<h1>课题专业选择</h1>
+	<div class="divL">
+	 <span>课题适合专业</span><br>
+	 <select name="se1" id="sel1" multiple size="10">
+	     <option value="软件工程">软件工程</option>
+	     <option value="软件工程(专升本)">软件工程(专升本)</option>
+	     <option value="自动化">自动化</option>
+	     <option value="电子信息">电子信息</option>
+	     <option value="光学电子">光学电子</option>
+	     <option value="物联网">物联网</option>
+	 </select>
+	</div>
+	<div class="divC">
+	    <button id="btn1">添加-->></button><br><br>
+	    <button id="btn2">删除<<--</button>
+	</div>
+	<div class="divR">
+	 <span>已选专业</span><br>
+	 <select name="se1" id="sel2" multiple size="10">
+	 </select>
+	</div>
+</body>
+</html>

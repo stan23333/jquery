@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>星级评价</title>
+    <style>
+        ul {
+        padding-left: 0;
+        overflow: hidden;
+        }
+        ul li {
+            float: left;
+            list-style: none;
+            width: 27px;
+            height: 27px;
+            background: url(img/star.gif)
+        }
+        ul li a {
+            display: block;
+            width: 100%;
+            padding-top: 27px;
+            overflow: hidden;
+        }
+        ul li.light {
+            background-position: 0 -29px;
+        }
+        ul li.on{}
+    </style>
+    <script src="libs/jquery-1.12.4.js"></script>
+  </head>
+  <body>
+    <ul class="comment">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <script>
+        var pos;
+        // 为li元素注册mouseover事件
+        $('.comment>li').mouseover(function(){
+            $(this).addClass('light').prevAll('li').addClass('light');
+            $(this).nextAll('li').removeClass('light');
+        });
+        // 为li元素注册mouseout事件
+        $('.comment>li').mouseout(function(){
+            $('.comment').find('li').removeClass('light'); // 处理未单击时鼠标离开的效果
+            //$('.comment>li').eq(pos).addClass('light').prevAll('li').addClass('light');  //处理的是单击后鼠标离开的效果
+            $('.comment>li:lt(' + (pos+1) +')').addClass('light');
+        });
+        // 为li元素注册click事件
+        $('.comment>li').click(function(){
+            //记下当前点击的li元素的索引位置
+            // console.log($(this).index());
+            pos=$(this).index();
+        });
+    </script>
+</body>
+</html>

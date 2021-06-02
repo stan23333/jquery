@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+     #box{
+     	width:590px;
+     	margin:0 auto;
+     	border:2px solid red;
+      position:relative;
+     }
+     ul{
+     	padding: 0;
+     	margin:0;
+     	list-style: none;
+      height: 470px;
+      overflow: hidden;
+      /*position:relative;*/
+     }
+     li>img{
+      display: block;
+     }
+     li{
+        position: absolute;
+        left:0;
+        top:0;
+      }
+     #box>span{
+        position: absolute;
+        color: #fff;
+        font-size: 30px;
+        line-height: 50px;
+        background-color: rgba(0,0,0,0.3);
+        cursor:pointer;
+     } 
+      #box>span#right{
+        right:0px;
+        top:215px;
+      }
+      #box>span#left{
+       left:0px;
+       top:215px;
+      }
+	</style>
+	<script src="libs/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+      var count=0;
+       $("#right").click(function(){
+         count++;
+         if(count==$("li").length)  count=0;
+          //$("li").eq(count).show(1000).siblings().hide(1000);
+         // $("li").eq(count).fadeIn(1000).siblings().fadeOut(1000);
+          $("li").eq(count).slideDown(1000).siblings().slideUp(1000);
+       })
+		   $("#left").click(function(){
+         count--;
+         $("li").eq(count).fadeIn().siblings().fadeOut();
+         if(count==-1)  count=$("li").length-1;
+       })
+    })
+	</script>
+</head>
+<body>
+	<div id="box">
+       <ul>
+        <li><img src="img/img0.jpg"></li>
+        <li><img src="img/img1.jpg"></li>
+        <li><img src="img/img2.jpg"></li>
+        <li><img src="img/img3.jpg"></li>
+       	<li><img src="img/img4.jpg"></li>
+       </ul>
+       <span id="right">》</span>
+       <span id="left">《</span>
+	</div>
+</body>
+</html>

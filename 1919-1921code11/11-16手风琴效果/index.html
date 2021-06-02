@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+     #box{
+     	width:1000px;
+     	height: 300px;
+     	margin:0 auto;
+     	border:2px solid red;
+     }
+     ul{
+     	padding: 0;
+     	margin:0;
+     	list-style: none;
+     	height: 300px;
+     }
+     li{
+     	padding: 0;
+     	margin:0;
+     	height: 300px;
+     	float: left;
+     	width:200px;
+     }
+    /* li:nth-child(1){
+        background-color: #ccc;
+     }
+     li:nth-child(2){
+        background-color: red;
+     }
+     li:nth-child(3){
+        background-color: blue;
+     }
+     li:nth-child(4){
+        background-color: green;
+     }
+     li:nth-child(5){
+        background-color: yellow;
+     }*/
+	</style>
+	<script src="libs/jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+  	   $("li").each(function(index,val){
+  	   	  $(this).css("backgroundImage","url(img/img"+index+".jpg)");
+  	   })
+      $("li").mouseenter(function(){
+          $(this).stop().animate({width:600}).siblings().stop().animate({width:100});
+      }).mouseleave(function(){
+      	$("li").stop().animate({width:200});
+      });
+    })
+	</script>
+</head>
+<body>
+	<div id="box">
+       <ul>
+       	<li></li>
+       	<li></li>
+       	<li></li>
+       	<li></li>
+       	<li></li>
+       </ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		li{
+			font-size:20px;
+			font-weight: bold;
+			border:2px solid red;
+		}
+		.box{
+			width: 100px;
+			height: 100px;	
+			background-color: blue;
+			border-radius: 50%;
+		}
+	</style>
+	<script src="libs/jquery-1.12.4.js"></script>
+</head>
+<body>
+	<ul>
+		<li>郑州大学</li>
+		<li>河南大学</li>
+		<li>河南科技大学</li>
+		<li>河南师范大学</li>
+		<li>河南农业大学</li>
+		<li>河南理工大学</li>
+	</ul>
+	<div class="box"></div>
+	<script>
+		$('ul li').animate({marginLeft:'15px'},1000,function(){
+	    	$('ul li').animate({
+	         	marginTop: '25px',
+	      	}, 1500);
+   		})
+   		$('.box').animate({marginLeft:300,marginTop:200},2000);
+	</script>
+</body>
+</html>

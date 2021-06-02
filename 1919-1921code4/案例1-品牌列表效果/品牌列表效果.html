@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>品牌列表显示案例</title>
+	<script src="libs/jquery-1.12.4.js"></script>
+	<style>
+		/*css初始化（重置）*/
+		body,ul{
+			margin:0;
+			padding:0;
+		}
+		a{
+			text-decoration: none;
+		}
+		ul{
+			list-style: none;
+		}
+		/*页面css设置*/
+		div.SubCategoryBox{
+			width:600px;
+			margin:20px auto 0;
+		}
+		div.SubCategoryBox ul li{
+			float: left;
+			width: 200px;
+			height:30px;
+			line-height: 30px;			
+			text-align: center;
+			font-size: 12px;
+		}
+		div.SubCategoryBox a:hover{
+			text-decoration: underline;
+			color:#C60;
+		}
+		.clear{
+			clear:both;
+		}
+		div.showmore{
+			width:150px;
+			height:20px;
+			line-height: 20px;
+			text-align: center;
+			margin:10px auto;
+			border:1px solid #ccc;
+		}
+		div.showmore span{
+			font-size: 12px;
+			padding-left: 15px;
+			background:url(images/down.gif) no-repeat 0px 3px;
+		}
+		.highlighted a{
+			color:#c60;
+		}
+	</style>
+</head>
+<body>
+	<div class="SubCategoryBox">
+		<ul>
+			<li><a href="#">佳能</a><i>(30440)</i></li>
+			<li><a href="#">索尼</a><i>(27220)</i></li>
+			<li><a href="#">三星</a><i>(20808)</i></li>
+			<li><a href="#">尼康</a><i>(17821)</i></li>
+			<li><a href="#">松下</a><i>(12289)</i></li>
+			<li><a href="#">卡西欧</a><i>(8242)</i></li>
+			<li><a href="#">富士</a><i>(14894)</i></li>
+			<li><a href="#">柯达</a><i>(9520)</i></li>
+			<li><a href="#">宾得</a><i>(2195)</i></li>
+			<li><a href="#">理光</a><i>(4114)</i></li>
+			<li><a href="#">奥林巴斯</a><i>(12205)</i></li>
+			<li><a href="#">明基</a><i>(1466)</i></li>
+			<li><a href="#">爱国者</a><i>(3091)</i></li>
+			<li><a href="#">其它品牌相机</a><i>(7275)</i></li>
+		</ul>
+		<div class="clear"></div>
+		<div class="showmore">
+			<a href="#"><span>显示全部品牌</span></a>
+		</div>
+	</div>
+	<script>
+		var others=$(".SubCategoryBox>ul>li:gt(5):not(:last)");
+		others.hide();
+		var btn=$(".SubCategoryBox>.showmore>a");
+		btn.click(function(){
+			if(others.is(":hidden"))
+			{
+				others.show();
+				//js innerText
+				$(this).children("span").text("收起部分品牌").css("background","url(images/up.gif) no-repeat 0px 3px");
+				$(".SubCategoryBox>ul>li").filter(":contains(佳能),:contains(尼康),:contains(奥林巴斯)").addClass("highlighted");
+			}
+			else
+			{
+				others.hide();
+				$(this).children("span").text("显示全部品牌").css("background","url(images/down.gif) no-repeat 0px 3px");
+				$(".SubCategoryBox>ul>li").filter(":contains(佳能),:contains(尼康),:contains(奥林巴斯)").removeClass("highlighted");
+			}
+		});
+	</script>		
+</body>
+</html>

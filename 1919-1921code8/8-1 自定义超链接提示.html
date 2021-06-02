@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	   #tooltip{
+	    border:1px dotted #999;
+	    background-color:#eee;
+	    color:#F06;
+	    font-size:12px;
+	    padding: 3px;
+	    border-radius: 2px;
+	    position: absolute;
+	   }
+	</style>
+	<script src="libs/jquery-1.12.4.js"></script>
+</head>
+<body>
+	<p><a href="javascript:;" title="自带超链接提示">自带超链接提示</a></p>
+	<p><a href="javascript:;" title="这是我自定义的超链接提示" class="tooltip">自定义超链接提示</a></p>
+	<script>
+		var x=12;
+		var y=16;
+		$("a.tooltip").mouseover(function(e){
+			this.myTitle=this.title;  //也可以通过给元素一个自定义属性myTitle来临时存放title属性的值，注意：元素的属性是全局的
+			var tip=$("<div id='tooltip'>" + this.myTitle + "</div>");
+			this.title="";
+			$("body").append(tip);
+			tip.css({
+				left:e.pageX+x,
+				top:e.pageY+y
+			});
+		}).mouseout(function(){
+			this.title=this.myTitle;
+			$("#tooltip").remove();
+		}).mousemove(function(e){
+			$("#tooltip").css({
+				left:e.pageX+x,
+				top:e.pageY+y
+			});
+		});
+	</script>
+</body>
+</html>

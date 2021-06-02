@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS 过渡</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+			position: relative;
+		}
+
+		.transition {
+			width: 200px;
+			height: 200px;
+		}
+
+		.box {
+			width: 200px;
+			height: 200px;
+			background-color: green;
+			
+			position: absolute;
+			top: 50px;
+			left: 20px;
+
+			transition: all 3s;
+		}
+
+		.transition:hover .box {
+			left: 500px;
+		}
+
+		/* 过渡动画效果可以应用于 宽高 颜色 位置 圆角 ... 多种属性 */
+
+		/* 但并不是所有属性都可以应用 过渡 例如 z-index  */
+
+	</style>
+</head>
+<body>
+	<div class="transition">
+		<div class="box"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>我的购物车-品优购</title>
+    <!-- 引入facicon.ico网页图标 -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- 引入css 初始化的css 文件 -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 引入公共样式的css 文件 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 引入car css -->
+    <link rel="stylesheet" href="css/car.css">
+    <!-- 先引入jquery -->
+    <script src="libs/jquery-1.12.4.js"></script>
+    <script>
+      $(function(){
+        //点击全选复选框，另外一个全选复选框和商品列表中所有的子复选框随之变化
+        //此处复选框的级联效果既可以通过click事件监听，也可以通过change事件监听
+        $(".checkall").change(function(){
+         /* if(this.checked==true)
+            $(".checkall,.j-checkbox").prop("checked",true);
+          else
+            $(".checkall,.j-checkbox").prop("checked",false);*/
+           $(".checkall,.j-checkbox").prop("checked",this.checked);
+           countSum();
+        });
+
+        //点击某个子复选框，根据点击后当前所有的子复选框的选中情况来控制全选复选框的选中状态
+        $(".j-checkbox").change(function(){
+          var flag=($(".j-checkbox:checked").length==$(".j-checkbox").length);  //判断所有的子复选框是否全部勾选上 true or false
+          /*if(flag)
+             $(".checkall").prop("checked",true);
+          else
+             $(".checkall").prop("checked",false);*/
+          $(".checkall").prop("checked",flag); 
+          countSum();
+        });
+
+        //点击+按钮
+        $(".increment").click(function(){
+          var n=parseInt($(this).prev().val());
+          n++;
+          $(this).prev().val(n);
+          //重新计算商品小计总额
+          var price=parseFloat($(this).parents(".p-num").prev().html().substr(1));
+          var total=price*n;
+          $(this).parents(".p-num").next().html("￥"+total.toFixed(2));
+          countSum();
+        });
+
+        //点击-按钮
+        $(".decrement").click(function(){
+          var n=parseInt($(this).next().val());
+          if(n==1) return false;
+          n--;
+          $(this).next().val(n);
+          //重新计算商品小计总额
+          var price=parseFloat($(this).parents(".p-num").prev().html().substr(1));
+          var total=price*n;
+          $(this).parents(".p-num").next().html("￥"+total.toFixed(2));
+          countSum();
+        });
+
+        //输入框内容发生改变时
+        $(".itxt").change(function(){
+          var n=parseInt($(this).val());
+          //重新计算商品小计总额
+          var price=parseFloat($(this).parents(".p-num").prev().html().substr(1));
+          var total=price*n;
+          $(this).parents(".p-num").next().html("￥"+total.toFixed(2));
+          countSum();
+        });
+
+        //点击删除按钮
+        $(".p-action>a").click(function(){
+            $(this).parents(".cart-item").remove();
+             countSum();
+        })
+
+         //点击删除选中的商品项
+        $(".remove-batch").click(function(){
+            $(".j-checkbox:checked").parents(".cart-item").remove();
+             countSum();
+        })
+
+         //清空购物车
+        $(".clear-all").click(function(){
+            $(".cart-item").remove();
+            countSum();
+        })
+        //定义全局函数countSum()来统计已选商品总件数与总金额
+        function countSum(){
+          var count=0;
+          var money=0; 
+          var item=$(".j-checkbox:checked").parents(".cart-item");
+          //遍历选中的商品列表项里的商品件数输入框的值，累加到count中
+          item.find(".itxt").each(function(){
+            count+=parseInt($(this).val());
+          });          
+          $(".amount-sum").find("em").html(count);
+          //统计总金额
+          item.find(".p-sum").each(function(){
+            money+=parseFloat($(this).html().substr(1));
+          }); 
+          $(".price-sum").find("em").html("￥"+money.toFixed(2));
+        }
+        countSum();
+      })
+    </script>
+  </head>
+  <body>
+    <div class="car-header">
+      <div class="w">
+        <div class="car-logo">
+          <img src="img/logo.png" alt=""> <b>购物车</b>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="c-container">
+      <div class="w">
+        <div class="cart-filter-bar">
+          <em>全部商品</em>
+        </div>
+        <!-- 购物车主要核心区域 -->
+        <div class="cart-warp">
+          <!-- 头部模块 -->
+          <div class="cart-thead">
+            <div class="t-checkbox">
+              <input type="checkbox" name="" id="" class="checkall"> 全选
+            </div>
+            <div class="t-goods">商品</div>
+            <div class="t-price">单价</div>
+            <div class="t-num">数量</div>
+            <div class="t-sum">小计</div>
+            <div class="t-action">操作</div>
+          </div>
+          <!-- 商品列表模块 -->
+          <div class="cart-item-list">
+            <div class="cart-item">
+              <div class="p-checkbox">
+                <input type="checkbox" class="j-checkbox">
+              </div>
+              <div class="p-goods">
+                <div class="p-img">
+                  <img src="upload/p1.jpg" alt="">
+                </div>
+                <div class="p-msg">【5本26.8元】经典儿童文学彩图青少版八十天环游地球中学生语文教学大纲</div>
+              </div>
+              <div class="p-price">￥12.60</div>
+              <div class="p-num">
+                <div class="quantity-form">
+                  <a href="javascript:;" class="decrement">-</a>
+                  <input type="text" class="itxt" value="1">
+                  <a href="javascript:;" class="increment">+</a>
+                </div>
+              </div>
+              <div class="p-sum">￥12.60</div>
+              <div class="p-action"><a href="javascript:;">删除</a></div>
+            </div>
+            <div class="cart-item">
+              <div class="p-checkbox">
+                <input type="checkbox" class="j-checkbox">
+              </div>
+              <div class="p-goods">
+                <div class="p-img">
+                  <img src="upload/p2.jpg" alt="">
+                </div>
+                <div class="p-msg">【2000张贴纸】贴纸书 3-6岁 贴画儿童 贴画书全套12册 贴画 贴纸儿童 汽</div>
+              </div>
+              <div class="p-price">￥24.80</div>
+              <div class="p-num">
+                <div class="quantity-form">
+                  <a href="javascript:;" class="decrement">-</a>
+                  <input type="text" class="itxt" value="1">
+                  <a href="javascript:;" class="increment">+</a>
+                </div>
+              </div>
+              <div class="p-sum">￥24.80</div>
+              <div class="p-action"><a href="javascript:;">删除</a></div>
+            </div>
+            <div class="cart-item">
+              <div class="p-checkbox">
+                <input type="checkbox" class="j-checkbox">
+              </div>
+              <div class="p-goods">
+                <div class="p-img">
+                  <img src="upload/p3.jpg" alt="">
+                </div>
+                <div class="p-msg">唐诗三百首+成语故事全2册 一年级课外书 精装注音儿童版 小学生二三年级课外阅读书籍</div>
+              </div>
+              <div class="p-price">￥29.80</div>
+              <div class="p-num">
+                <div class="quantity-form">
+                  <a href="javascript:;" class="decrement">-</a>
+                  <input type="text" class="itxt" value="1">
+                  <a href="javascript:;" class="increment">+</a>
+                </div>
+              </div>
+              <div class="p-sum">￥29.80</div>
+              <div class="p-action"><a href="javascript:;">删除</a></div>
+            </div>
+          </div>
+          <!-- 结算模块 -->
+          <div class="cart-floatbar">
+            <div class="select-all">
+              <input type="checkbox" name="" id="" class="checkall">全选
+            </div>
+            <div class="operation">
+              <a href="javascript:;" class="remove-batch"> 删除选中的商品</a>
+              <a href="javascript:;" class="clear-all">清理购物车</a>
+            </div>
+            <div class="toolbar-right">
+              <div class="amount-sum">已经选<em></em>件商品</div>
+              <div class="price-sum">总价： <em></em></div>
+              <div class="btn-area">去结算</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+  </body>
+</html>

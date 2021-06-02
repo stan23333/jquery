@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset = "utf-8">
+  <title>全选按钮级联(双向)效果</title>
+  <style type = "text/css">
+	td{
+		text-align:center;
+	    font-size:32px;
+	    line-height:36px;
+	}
+	input{
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+	}
+    input[type=button]{
+        width: 100px;
+    }
+  </style>
+  <script src="libs/jquery-1.12.4.js"></script>     
+ </head>
+
+<body>
+   <table  border = "1" cellspacing = "0" cellpadding = "0"  width = "600px;" id="tb1" >
+    <tr>
+    	<td><input type = "checkbox" id = "all"  value =  "全选" />全选</td>
+    	<td>商品名称</td>
+    	<td>价格</td>
+    </tr>
+    <tr>
+    	<td><input type = "checkbox" name = "product" /></td>
+        <td>网页设计</td>
+        <td>25</td>
+    </tr>
+    <tr>
+    	<td><input type = "checkbox" name = "product"  /></td>
+    	<td>css + div布局</td>
+    	<td>26</td>
+    </tr>
+    <tr>
+    	<td><input type = "checkbox" name = "product"  /></td>
+    	<td>JavaScript程序设计</td>
+    	<td>28</td>
+    </tr>
+    <tr>
+      <td><input type = "checkbox" name = "product"  /></td>
+      <td>JQuery程序设计</td>
+      <td>28</td>
+    </tr>
+  </table>
+  <script>
+    //jquery checkbox的checked属性 jquery版本<1.6 使用attr方法 jquery版本>=1.6 使用prop方法
+    //为全选复选框添加单击事件
+      $("#all").click(function(){
+         /* if($(this).is(":checked")) //判定全选复选框是否被选中
+            $("input[name=product]").prop("checked",true);
+          else
+            $("input[name=product]").prop("checked",false);*/
+          //$("input[name=product]").prop("checked",$(this).is(":checked"));
+          //$("input[name=product]").prop("checked",this.checked);
+          $(":checkbox:not(:first)").prop("checked",this.checked);          
+      });
+
+      //为下面所有的子复选框添加单击事件
+      $("input[name=product]").click(function(){
+        var n=$("input[name=product]:checked").length;
+        /*if(n==$("input[name=product]").length)
+          $("#all").prop("checked",true);
+        else
+          $("#all").prop("checked",false);*/
+        $("#all").prop("checked",n==$("input[name=product]").length);
+      });  
+     
+  </script>
+</body>
+</html>

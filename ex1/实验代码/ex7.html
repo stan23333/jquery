@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>菜单关联</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-size: 12px;
+            font-family: "宋体", "微软雅黑";
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a:link,
+        a:visited {
+            text-decoration: none;
+        }
+
+        div.list {
+            width: 210px;
+            margin: 40px auto 0 auto;
+        }
+
+        .list a {
+            display: block;
+            font-weight: bold;
+            height: 36px;
+            line-height: 36px;
+        }
+
+        .list ul li {
+            background-color: #467ca2;
+            border-bottom: solid 1px #316a91;
+        }
+
+        .list ul li a {
+            padding-left: 10px;
+            color: #fff;
+        }
+
+        .list ul li ul {
+            display: none;
+        }
+
+        .list ul li ul li {
+            background-color: #6196bb;
+            border-bottom: solid 1px #467ca2;
+        }
+
+        .list ul li ul li ul {
+            display: none;
+        }
+
+        .list ul li ul li a {
+            padding-left: 20px;
+            color: #9FC;
+        }
+
+        .list ul li ul li ul li {
+            background-color: #d6e6f1;
+            border-bottom: solid 1px #6196bb;
+        }
+
+        .list ul li ul li ul li a {
+            padding-left: 30px;
+            color: #316a91;
+        }
+    </style>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+
+            $("a.inactive").click(function(){
+                $(this).next("ul").show().parents().siblings().find("ul").hide();
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="list">
+        <ul class="yiji">
+            <li><a href="#" class="inactive">学校概况</a>
+                <ul>
+                    <li><a href="#">科大简介</a></li>
+                    <li><a href="#">现任领导</a></li>
+                    <li><a href="#">组织机构</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="inactive">教育教学</a>
+                <ul>
+                    <li><a href="#">本科生教育</a></li>
+                    <li><a href="#">研究生教育</a></li>
+                    <li><a href="#">继续教育</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="inactive">招生就业</a>
+                <ul>
+                    <li><a href="#">本科生招生</a></li>
+                    <li><a href="#">研究生招生</a></li>
+                    <li><a href="#">继续教育招生</a></li>
+                    <li><a href="#">就业信息网</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

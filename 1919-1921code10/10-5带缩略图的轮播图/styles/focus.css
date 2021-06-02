@@ -1,0 +1,105 @@
+body,ul,h3{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	border:0;
+}
+.focus{
+	width: 700px;
+	margin:10px auto;
+	background-color: #000;
+}
+.focus .bigimg{
+	height:320px;
+	position: relative;
+}
+.focus .bigimg ul{
+	height: 100%;
+}
+.focus .bigimg li{
+	display: none;
+}
+.focus .bigimg li.current{
+	display: block;
+}
+.focus .bigimg a{
+	display: block;
+	overflow: hidden;
+}
+.focus .bigimg .tip{
+	width:700px;
+	height:50px;
+	line-height: 50px;
+	position: absolute;
+	bottom:0px;
+	background-color: rgba(0,0,0,0.8);
+}
+.focus .bigimg .tip h3{
+	float: left;
+	width:85%;
+	padding-left: 20px; 
+	font-size: 24px;
+	color: #6f3;
+}
+.focus .bigimg .tip span{
+	float: left;
+	width: 30px;
+	height: 30px;
+	margin-top:10px;
+	display: block;	
+}
+.focus .bigimg .tip span.prev{
+	background:url(../images/icon_focus_switch.png) no-repeat 0 0;
+}
+.focus .bigimg .tip span.prev:hover{
+	background:url(../images/icon_focus_switch.png) no-repeat -30px 0;
+}
+.focus .bigimg .tip span.next{
+	background:url(../images/icon_focus_switch.png) no-repeat -60px 0;
+}
+.focus .bigimg .tip span.next:hover{
+	background:url(../images/icon_focus_switch.png) no-repeat -90px 0;
+}
+
+.focus .smallimg{
+	padding: 10px 0;
+}
+.focus .smallimg ul {
+	margin-left: 4px;
+    overflow: hidden;
+}
+.focus .smallimg li{
+	float: left;
+	width: 60px;
+	margin: 0 4px 0 5px;
+	overflow:hidden;
+	position: relative;
+}
+.focus .smallimg img{
+	width: 60px;
+}
+.focus .smallimg span.mask{
+	width: 60px;
+	height: 60px;
+	display: block;
+	position: absolute;
+	left: 0;
+	top:0;
+	background-color: rgba(0,0,0,0.4);
+}
+.focus .smallimg span.border{
+	display: none;
+	width: 54px;
+	position: absolute;
+	left:0;
+	bottom: 0;
+	border: 3px solid #98E404;
+}
+

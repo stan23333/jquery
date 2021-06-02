@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>事件模拟</title>
+<script src="libs/jquery-1.12.4.js" type="text/javascript"></script>
+<script>
+$(function(){
+	 //常用事件的模拟
+// $("h1").click(function(){
+//     alert("11111111");
+//   }).click();
+// $("h1").click();
+ //自定义事件的模拟
+ // $("button").on("myClick",function(){
+ //     alert("button被单击了！");
+ //    }).trigger("myClick"); 
+ // 在模拟时传递参数，以数组形式传递,注意与用户触发是数据的传递的不同
+  // $("h1").on("mouseover",function(e,d1,d2){
+  //       alert(d1+","+d2);
+  //  }).trigger("mouseover",["abc","123"]);
+ // 在模拟时传递参数，以数组形式传递,注意与用户触发是数据的传递的不同
+  // $("h1").on("mouseover",{d1:"abc",d2:"123"},function(e){
+  //       alert(e.data.d1+","+e.data.d2);
+  //  });
+  // 执行默认操作
+  $("input[type=text]").focus(function(){
+    $(this).css("background-color","#ccc");
+    });
+  // $("input[type=text]").trigger("focus");  //光标在文本框中显示  
+  $("input[type=text]").triggerHandler("focus");
+})
+</script>
+</head>
+<body>
+<h1>河南科技大学</h1>
+<button>单击3</button>
+<br>
+<br>
+<input id="btn1" type="button" value="点击1" />
+<input id="btn2" type="button" value="点击2" />
+<a id="a1" href="#">河南科技大学</a>
+<br>
+<br>
+<input type="text">
+</body>
+</html>

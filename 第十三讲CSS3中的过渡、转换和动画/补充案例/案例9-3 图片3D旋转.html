@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3D变形</title>
+<style type="text/css">
+div.no1{
+    width: 152px;
+    height: 227px;
+    border: 1px solid #000;
+    position: relative;
+    -webkit-perspective:230px;
+}
+div.no1 img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility:hidden;  /*定义元素在不面对屏幕时不可见*/
+    transition:all 1s ease 0s;
+}
+div.no1 img.baby01{
+    -webkit-transform:rotateY(-180deg);
+}
+div.no1:hover img.baby01{
+    -webkit-transform:rotateY(0deg);
+}
+div.no1:hover img.baby02{
+    -webkit-transform:rotateY(180deg);
+}
+/*下面是盒子2*/
+div.no2{
+    width: 152px;
+    height: 227px;
+    border: 1px solid #000;
+    position: relative;
+    -webkit-perspective:230px;
+}
+div.no2 img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility:hidden;
+    transition:all 1s ease 0s;
+}
+div.no2 img.baby01{
+    -webkit-transform:rotateX(-180deg);
+}
+div.no2:hover img.baby01{
+    -webkit-transform:rotateX(0deg);
+}
+div.no2:hover img.baby02{
+    -webkit-transform:rotateX(180deg);
+}
+</style>
+</head>
+<body>
+	<div class="no1">
+		<img class="baby01" src="images/puke01.png" alt="5" />
+		<img class="baby02" src="images/puke02.png" alt="7" />
+	</div>
+	<div class="no2">
+		<img class="baby01" src="images/puke01.png" alt="5" />
+		<img class="baby02" src="images/puke02.png" alt="7" />
+	</div>
+</body>
+</html>

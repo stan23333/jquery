@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body{
+		overflow: hidden;
+	}
+	div.main{
+		position: relative;
+		font-size: 30px;
+	}
+	div.main>span{
+		position: absolute;
+		width:300px;
+		text-align: center;
+	}
+     div.content{
+     	width:100%;
+     	line-height: 80px;
+     	background-color: #999;
+     	position: fixed;
+     	left: 0;
+     	bottom:0;
+     	text-align: center;
+     }
+      div.content>label{
+      	font-size: 20px;
+      }
+      div.content>input{
+      	height: 22px;
+      	width:240px;
+      	font-size: 18px;
+      	border-radius: 5px;
+      }
+        div.content>button{
+        	background-color: red;
+        	font-size: 18px;
+        	color: #fff;
+        	border:none;
+        }
+	</style>
+	<script src="libs/jquery-1.12.4.js"></script>
+	<script>
+	var colors=["red","green","blue","pink","yellow","orange","purple"];
+	$(function(){
+		$("#btn").click(function(){
+			var randomColor=parseInt(Math.random()*colors.length);
+		    // var randomX=parseInt(Math.random()*1066);
+		    var randomY=parseInt(Math.random()*300);
+			$("<span></span>")//创建span
+			.text($("#text").val())  //设置内容
+			.css("color",colors[randomColor])  //设置文字颜色 
+			.css("left",1500)   //设置left值
+			.css("top",randomY) //设置top值
+			.animate({left:-500},10000,function(){  //设置动画
+               // 到了终点需要删除
+               $(this).remove();
+			}) 
+			.appendTo(".main");
+			// $("#text").val("");
+		});
+		$("#text").keydown(function(e){
+		  if(e.which==13)
+			$("#btn").click();
+		});
+	})
+	</script>
+</head>
+<body>
+    <div class="main"></div>
+	<div class="content">
+		<label>吐槽:</label>
+		<input type="text" id="text">
+		<button id="btn">发射</button>
+	</div>
+</body>
+</html>

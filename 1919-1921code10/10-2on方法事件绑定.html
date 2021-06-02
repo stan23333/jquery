@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>on()事件绑定</title>
+<style>
+div.dd1{
+	width:400px;
+	background-color:#C60;
+	}
+div.dd2{
+	width:150px;
+	height: 100px;
+	background-color:pink;
+	}
+</style>
+<!-- <script src="libs/jquery-1.12.4.js"  type="text/javascript"> -->
+<script src="libs/jquery.js"  type="text/javascript">
+</script>
+<script>
+$(function(){
+//on()方法的一般绑定事件的方法
+	$("h3").on("click",function(){
+		if($(this).next().is(":visible"))
+		   $(this).next().hide();
+	    else  $(this).next().show();
+	})
+//on()方法绑定多个事件，执行同一个函数
+       $("#btn").on("mouseover mouseout",function(){
+	      $(".dd2").html(function(index,value){
+		     console.log(index,value);
+		     return value+"a";
+          });
+	   });
+// on方法绑定多个事件，执行不同的函数
+    $("h3").on({"mouseover":function(){ 
+           $(this).next().hide(); 
+          },"mouseout":function(){ 
+               $(this).next().show();
+          }
+     });
+    /* $("h3").on("mouseover",function(){ 
+           $(this).next().hide();})
+     		.on("mouseout",function(){ 
+               $(this).next().show();
+            });*/
+    /*$("h3").mouseover(function(){ 
+           $(this).next().hide(); 
+          }).mouseout(function(){ 
+               $(this).next().show();
+          });*/
+  //on方法绑定自定义事件
+     $("p").on("myEvent", function(){
+         $(this).text("洛阳  What a beautiful city!");
+     });
+   $("button").click(function(){
+     $("p").trigger("myEvent");
+   });
+   // $("h3").mouseover(function(){}).mouseout(function(){});
+	/*function fn(){	
+		alert("单击！");
+		}
+	$("h3").on("click",fn);*/
+
+	$("input").on("click",{foo:"123456",ss:"abcd"},function(e){
+		console.log(e.data.ss,e.data.foo);
+	})
+
+
+	$("h3").hover(function(){
+		$(this).next().show();
+		},function(){
+			$(this).next().hide();
+			})
+	
+	// $(".dd").mouseover(function(){
+	// 	$("span").html(function(index,value){
+	// 	return value+3;
+	// 	})
+	// })
+	// $(".dd").mouseenter(function(){
+	// 	$("span").html(function(index,value){
+	// 	return value+3;
+	// 	})
+	// })
+
+	/*var flag=1;
+	$("h3").click(function(){
+		if(flag==1)
+		{$(this).css("background-color","red");
+		flag=2;}
+		else if(flag==2)
+        {
+		$(this).css("background-color","blue");
+	     flag=3;}
+	    else if(flag==3)
+		{
+		$(this).css("background-color","green");
+		flag=1;}
+		})	*/
+	/*$("h3").toggle(function(){
+     $(this).css("background-color","red");
+	},function(){
+     $(this).css("background-color","blue");
+	},function(){
+      $(this).css("background-color","green");
+	})*/
+	
+})
+</script>
+</head>
+
+<body>
+<h3>河南科技大学</h3>
+<div class="dd1">在文档装载完成后，也可以使用bind()方法对匹配的元素进行特定的事件绑定一个事件处理函数。事件处理函数会接收到一个事件对象。
+在文档装载完成后，也可以使用bind()方法对匹配的元素进行特定的事件绑定一个事件处理函数。事件处理函数会接收到一个事件对象。
+</div>
+<input type="button" value="改变span的值" id="btn">
+<div class="dd2"></div>
+<button>单击</button>
+<p>洛阳牡丹花卉</p>
+</body>
+</html>

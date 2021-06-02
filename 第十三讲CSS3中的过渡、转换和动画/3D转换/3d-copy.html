@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>立方体</title>
+	<style>
+		.cube {
+			width: 300px;
+			height: 300px;
+			margin: 100px auto;
+			/*border: 1px solid #CCC;*/
+
+			transform: rotateY(30deg) rotateX(-15deg);
+
+			position: relative;
+
+			/*perspective: 1000px;*/
+
+			transform-style: preserve-3d;
+		}
+
+		.cube > div {
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			line-height: 300px;
+			font-size: 30px;
+
+			/*opacity: 0.5;*/
+
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		.front {
+			background-color: blue;
+			transform: translateZ(150px);
+		}
+
+		.back {
+			background-color: gray;
+			transform: translateZ(-150px);
+		}
+
+		.left {
+			background-color: pink;
+			transform: rotateY(-90deg) translateZ(150px);
+		}
+
+		.right {
+			background-color: red;
+			transform: rotateY(90deg) translateZ(150px);
+		}
+
+		.top {
+			background-color: yellow;
+			transform: rotateX(90deg) translateZ(150px);
+		}
+
+		.bottom {
+			background-color: green;
+			transform: rotateX(-90deg) translateZ(150px);
+		}
+	</style>
+</head>
+<body>
+	<div class="cube">
+		<div class="front">front</div>
+		<div class="back">back</div>
+		<div class="top">top</div>
+		<div class="left">left</div>
+		<div class="right">right</div>
+		<div class="bottom">bottom</div>
+	</div>
+</body>
+</html>

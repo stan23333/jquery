@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>事件委托</title>
+<style>
+div{
+	width:400px;
+	background-color:#C60;
+	}
+</style>
+<script src="jquery-1.12.4.js"  type="text/javascript">
+</script>
+<script>
+$(function(){
+  $("#btn").click(function(){
+    $("<p>我是新创建的段落</p>").appendTo("body");
+   })
+  $("body").on("click","p",function(e){
+     $(this).css("background-color","pink");
+   }) 
+})
+</script>
+</head>
+<body>
+<input type="button" id="btn" value="添加段落">
+<p>我是段落一</p>
+<p>我是段落二</p>
+<p>我是段落三</p>
+<p>我是段落四</p>
+</body>
+</html>

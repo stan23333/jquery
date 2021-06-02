@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS 2D转换</title>
+	<style>
+		html, body {
+			height: 100%;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+			position: relative;
+		}
+
+		/* 实现任意大小元素的垂直和水平居中 */
+		.layer {
+			width: 500px;
+			height: 200px;
+			background-color: pink;
+
+			/*margin-top: -100px;
+			margin-left: -250px;*/
+
+			/* 外边距设置百分比时需要分析 */
+			/*margin-top: -50%;
+			margin-left: -50%;*/
+			transform: translate(-50%, -50%);
+			position: absolute;
+			left: 50%;
+			top: 50%;
+		}
+		
+
+		.demo {
+			width: 500px;
+			height: 300px;
+			border: 1px solid #CCC;
+			margin: 50px auto;
+		}
+
+		.inner {
+			width: 50%;
+			height: 50%;
+			background-color: red;
+			
+			/* 外边距设置百分比时，参考是父盒子宽度 */
+			/* margin: 10%; */
+			
+			/* 内边距设置百分比时，参考是父盒子宽度 */
+			/* padding: 10%; */
+			
+			/* 边框不支持百分比宽度 */
+			border: 10% solid #CCC;
+		}
+	</style>
+</head>
+<body>
+	<div class="layer"></div>
+
+	<!-- <div class="demo">
+		<div class="inner"></div>
+	</div> -->
+</body>
+</html>

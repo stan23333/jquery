@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+   <meta charset="utf-8" />
+   <title>用户管理-用户列表</title>
+   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+   <meta content="" name="description" />
+   <meta content="Mosaddek" name="author" />
+   <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+   <link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+   <link href="assets/bootstrap/css/bootstrap-fileupload.css" rel="stylesheet" />
+   <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+   <link href="css/style.css" rel="stylesheet" />
+   <link href="css/style-responsive.css" rel="stylesheet" />
+   <link href="css/style-default.css" rel="stylesheet" id="style_color" />
+   <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+   <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="fixed-top">
+   <!-- BEGIN HEADER -->
+   <div id="header" class="navbar navbar-inverse navbar-fixed-top">
+       <!-- BEGIN TOP NAVIGATION BAR -->
+       <div class="navbar-inner">
+           <div class="container-fluid">
+               <!--BEGIN SIDEBAR TOGGLE-->
+               <div class="sidebar-toggle-box hidden-phone">
+                   <div class="icon-reorder tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+               </div>
+               <!--END SIDEBAR TOGGLE-->
+               <!-- BEGIN LOGO -->
+               <a class="brand" href="index.html">
+                   <img src="img/logo.png" alt="Metro Lab" />
+               </a>
+               <!-- END LOGO -->
+               <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+               <a class="btn btn-navbar collapsed" id="main_menu_trigger" data-toggle="collapse" data-target=".nav-collapse">
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="arrow"></span>
+               </a>
+               <!-- END RESPONSIVE MENU TOGGLER -->
+              
+               <div class="top-nav ">
+                   <ul class="nav pull-right top-menu" >
+                       <!-- BEGIN USER LOGIN DROPDOWN -->
+                       <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                               <img src="img/avatar1_small.jpg" alt="">
+                               <span class="username">Jhon Doe</span>
+                               <b class="caret"></b>
+                           </a>
+                           <ul class="dropdown-menu extended logout">
+                               <li><a href="#"><i class="icon-user"></i>我的资料</a></li>
+                               <li><a href="#"><i class="icon-cog"></i>我的设置</a></li>
+                               <li><a href="login.html"><i class="icon-key"></i>退出</a></li>
+                           </ul>
+                       </li>
+                       <!-- END USER LOGIN DROPDOWN -->
+                   </ul>
+                   <!-- END TOP NAVIGATION MENU -->
+               </div>
+           </div>
+       </div>
+       <!-- END TOP NAVIGATION BAR -->
+   </div>
+   <!-- END HEADER -->
+   <!-- BEGIN CONTAINER -->
+   <div id="container" class="row-fluid">
+      <!-- BEGIN SIDEBAR -->
+      <div class="sidebar-scroll">
+        <div id="sidebar" class="nav-collapse collapse">
+         <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+         <div class="navbar-inverse">
+            <form class="navbar-search visible-phone">
+               <input type="text" class="search-query" placeholder="Search" />
+            </form>
+         </div>
+         <!-- END RESPONSIVE QUICK SEARCH FORM -->
+         <!-- BEGIN SIDEBAR MENU -->
+          <ul class="sidebar-menu">
+              <li class="sub-menu active">
+                  <a class="" href="index.html">
+                      <i class="icon-sun"></i>
+                      <span>桌面</span>
+                  </a>
+              </li>
+              <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-book"></i>
+                      <span>系统管理</span>
+                      <span class="arrow"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a class="" href="userlist.html">用户管理</a></li>
+                      <li><a class="" href="button.html">角色管理</a></li>
+                      <li><a class="" href="slider.html">权限管理</a></li>
+                  </ul>
+              </li>
+              <li class="sub-menu">
+                  <a href="javascript:;" class="">
+                      <i class="icon-cogs"></i>
+                      <span>销售管理</span>
+                      <span class="arrow"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a class="" href="calendar.html">销售报表</a></li>
+                      <li><a class="" href="grids.html">销售人员管理</a></li>
+                      <li><a class="" href="chartjs.html">月度销售计划</a></li>
+                  </ul>
+              </li>
+          </ul>
+         <!-- END SIDEBAR MENU -->
+        </div>
+      </div>
+      <!-- END SIDEBAR -->
+      <!-- BEGIN PAGE -->  
+      <div id="main-content">
+         <!-- BEGIN PAGE CONTAINER-->
+         <div class="container-fluid">
+            <!-- BEGIN PAGE HEADER-->   
+            <div class="row-fluid">
+               <div class="span12">
+                   <!-- BEGIN THEME CUSTOMIZER-->
+                   <!-- END THEME CUSTOMIZER-->
+                  <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+                   <h3 class="page-title">
+                     用户列表
+                   </h3>
+                   <ul class="breadcrumb">
+                       <li>
+                           <a href="#">桌面</a>
+                           <span class="divider">/</span>
+                       </li>
+                       <li>
+                           <a href="#">系统管理</a>
+                           <span class="divider">/</span>
+                       </li>
+                       <li class="active">
+                           用户列表
+                       </li>
+                       <li class="pull-right search-wrap">
+                           <form action="search_result.html" class="hidden-phone">
+                               <div class="input-append search-input-area">
+                                   <input class="" id="appendedInputButton" type="text">
+                                   <button class="btn" type="button"><i class="icon-search"></i> </button>
+                               </div>
+                           </form>
+                       </li>
+                   </ul>
+                   <!-- END PAGE TITLE & BREADCRUMB-->
+               </div>
+            </div>
+            <!-- END PAGE HEADER-->
+            <!-- BEGIN PAGE CONTENT-->
+             <div class="widget blue">
+                  <div class="widget-title">
+                      <h4><i class="icon-reorder"></i>查询用户信息</h4>
+                              <span class="tools">
+                              <a class="icon-chevron-down" href="javascript:;"></a>
+                              <a class="icon-remove" href="javascript:;"></a>
+                              </span>
+                  </div>
+                  <div class="widget-body">
+                    <div class="control-group ">
+                        <div class="controls">
+                        <span>
+                            用户名：<input class="span2 input-small" id="username" name="username" type="text" value="hhh">
+                            </span>
+                            <span style="margin-left: 10px;">
+                             电话号码：<input class="span2 input-small" id="username" name="username" type="text" value="hhh">
+                            </span>
+                            <span>
+                            <button class="btn  btn-primary" type="button">查询</button>
+                            </span>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            <div id="page-wraper">              
+                <div class="row-fluid">
+                    <div class="span12">
+                        <!-- BEGIN BASIC PORTLET-->
+                        <div class="widget orange">
+                            <div class="widget-title">
+                                <h4><i class="icon-reorder"></i> 用户列表</h4>
+                            <span class="tools">
+                                <a href="javascript:;" class="icon-chevron-down"></a>
+                                <a href="javascript:;" class="icon-remove"></a>
+                            </span>
+                            </div>
+                            <div style="text-align:right;margin-top:10px;margin-right:20px;" >
+                                <button class="btn btn-danger" type="button" id="btnAddUser">添加用户</button>
+                            </div>
+                            <div class="widget-body">
+                                <table class="table table-striped table-bordered table-advance table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th><i class="icon-list"></i>编号</th>
+                                        <th class="hidden-phone"><i class="icon-user"></i>用户名</th>
+                                        <th><i class="icon-lock"></i>密码</th>
+                                        <th><i class=" icon-phone"></i>电话</th>
+                                        <th><i class=" icon-edit">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><a href="#">1</a></td>
+                                        <td class="hidden-phone">张三</td>
+                                        <td>111111</td>
+                                        <td><span class="label label-important label-mini">12345679801</span></td>
+                                        <td>
+                                            <button class="btn btn-primary" id="btnUpdata"><i class="icon-pencil"></i></button>
+                                            <button class="btn btn-danger" id="btnDelete"><i class="icon-trash " ></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">2</a></td>
+                                        <td class="hidden-phone">李四</td>
+                                        <td>222222</td>
+                                        <td><span class="label label-important label-mini">12345679801</span></td>
+                                        <td>
+                                            <button class="btn btn-primary"><i class="icon-pencil"></i></button>
+                                            <button class="btn btn-danger"><i class="icon-trash "></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#">3</a></td>
+                                        <td class="hidden-phone">王五</td>
+                                        <td>333333</td>
+                                        <td><span class="label label-important label-mini">12345679801</span></td>
+                                        <td>
+                                            <button class="btn btn-primary"><i class="icon-pencil"></i></button>
+                                            <button class="btn btn-danger"><i class="icon-trash "></i></button>
+                                        </td>
+                                    </tr>
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="pagination pagination-centered">
+                                <ul>
+                                    <li><a href="#">«</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- END BASIC PORTLET-->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- END PAGE CONTENT-->         
+         </div>
+         <!-- END PAGE CONTAINER-->
+      </div>
+      <!-- END PAGE -->  
+   </div>
+   <!-- END CONTAINER -->
+
+   <!-- BEGIN FOOTER -->
+   <div id="footer">
+       2013 &copy; MetroAdmin.
+   </div>
+   <!-- END FOOTER -->
+     <div id="myModal3" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="myModalLabel3">确定要删除吗?</h3>
+          </div>
+          <div class="modal-body">
+              <p>您当前正在删除”张三“用户，确定要删除吗？</p>
+          </div>
+          <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+              <button data-dismiss="modal" class="btn btn-primary" id="btnOk">确定</button>
+          </div>
+      </div>
+   <!-- BEGIN JAVASCRIPTS -->
+   <!-- Load javascripts at bottom, this will reduce page load time -->
+   <script src="js/jquery-1.8.3.min.js"></script>
+   <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+   <script type="text/javascript" src="assets/jquery-slimscroll/jquery-ui-1.9.2.custom.min.js"></script>
+   <script type="text/javascript" src="assets/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+   <script src="assets/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
+   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+   <!-- ie8 fixes -->
+   <!--[if lt IE 9]>
+   <script src="js/excanvas.js"></script>
+   <script src="js/respond.js"></script>
+   <![endif]-->
+
+   <script src="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js" type="text/javascript"></script>
+   <script src="js/jquery.sparkline.js" type="text/javascript"></script>
+   <script src="assets/chart-master/Chart.js"></script>
+   <script src="js/jquery.scrollTo.min.js"></script>
+
+
+   <!--common script for all pages-->
+   <script src="js/common-scripts.js"></script>
+
+   <!--script for this page only-->
+
+   <script src="js/easy-pie-chart.js"></script>
+   <script src="js/sparkline-chart.js"></script>
+   <script src="js/home-page-calender.js"></script>
+   <script src="js/home-chartjs.js"></script>
+    <script>
+       $(function(){
+          $("#btnAddUser").click(function(){
+            location.href="addUser.html";
+          });
+          $("#btnUpdata").click(function(){
+            location.href="updataUser.html";
+          });
+          $("#btnDelete").click(function(){
+            $("#myModal3").modal("show");
+          });
+          $("#btnOk").click(function(){
+            alert("单击了确定！");
+          });
+       })
+    </script>
+   <!-- END JAVASCRIPTS -->   
+</body>
+<!-- END BODY -->
+</html>

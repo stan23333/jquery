@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 动画</title>
+	<style>
+		html, body {
+			height: 100%;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+
+		.box {
+			width: 200px;
+			height: 200px;
+			background-color: green;
+			
+			 animation: move 6s 2s steps(6); 
+			 /*animation: xin 6s 2s steps(6); */
+
+			/* animation 是一个复合属性，其中包括了 9 个单一属性 */
+			
+			/**/
+			/*animation-name: move;*/
+
+			/**/
+			/*animation-duration: 2s;*/
+
+			/**/
+			/*animation-delay: 1s;*/
+			
+			/**/
+			/*animation-timing-function: linear;*/
+			
+			/**/
+			animation-iteration-count: infinite;
+
+			/*animation-direction: alternate;*/
+
+			/*animation-fill-mode: forwards;*/
+			/*animation-fill-mode: backwards;*/
+
+		}
+
+		.box:hover {
+
+			animation-play-state: paused;
+		}
+
+		/*定义了一个动画序列*/
+
+		@keyframes move {
+
+			from {
+				width: 200px;
+				height: 200px;
+			}
+
+			to {
+				width: 400px;
+				height: 400px;
+			}
+		}
+
+		@keyframes xin {
+			0% {
+				transform: scale(1);
+			}
+
+			50% {
+				transform: scale(1.5);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+
+		/**
+		 * 动画序列
+		 * 指定动画序列名
+		 * 调整动画细节（掌握各属性的特点和用法）
+		 */
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

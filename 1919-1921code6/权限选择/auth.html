@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>权限选择</title>
+  <script src="libs/jquery-1.12.4.js"></script>
+  <style>
+    /*设置最外层div的样式*/
+    #contains{
+        margin-left: 500px;
+        margin-top: 20px;
+        background-color: #999999
+    }
+    /*设置secect选择框的样式*/
+    select{
+        float: left;
+        width: 60px;
+        height: 100px;
+    }
+    /*设置用来包裹按钮的div的样式*/
+    #btnDv{
+        width: 50px;
+        float: left;
+    }
+    /*设置按钮的样式*/
+    #btnDv>input{
+        width: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="contains">
+    <select multiple="multiple"  id="se1">
+      <option>提交</option>
+      <option>删除</option>
+       <option>修改</option>
+      <option>查询</option>
+      <option>发布</option>
+    </select>
+    <div id="btnDv">
+      <input type="button" name="name1" value=">" id="toRight">
+      <input type="button" name="name2" value="<" id="toLeft">
+      <input type="button" name="name3" value=">>" id="toAllRight">
+      <input type="button" name="name4" value="<<" id="toAllLeft">
+    </div>
+    <select multiple="multiple" id="se2"></select>
+  </div>
+  <script>
+    
+  </script>
+</body>
+</html>

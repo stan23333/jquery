@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉菜单</title>
+	<style>
+	ul,li{
+		padding:0;
+		margin: 0;
+		list-style:none;
+		text-align: center;
+	}
+	#wrap{
+		width:330px;
+		margin:30px auto 0;
+		height: 30px;
+		background-color: blue;
+		border-radius: 5px;
+		padding:0 5px;
+	}
+	#wrap>ul{
+		height: 30px;
+	}
+	#wrap>ul>li{
+		float: left;
+		width: 100px;
+		background-color:yellow;
+		height: 30px;
+		line-height: 30px;
+		margin: 0 5px; 
+	}
+	a{
+		text-decoration: none;
+		color:red;
+	}	
+    #wrap .uu{
+    	background-color: pink;
+    	display: none;
+    }
+	</style>
+	<script src="../jquery-1.12.4.js"></script>
+	<script>
+     // $(function(){
+     // 	$("#wrap>ul>li").mouseenter(function(){   //事件最终触发在DOM对象
+     // 		// $(this).css("background-color","red");
+     // 		// $(this).find("ul").css("display","block");
+     // 		$(this).children("ul").slideDown();     //slideDown的作用是显示元素
+     // 	})
+     // 	.mouseleave(function(){
+     // 		$(this).children("ul").slideUp();      //slideUp的作用是隐藏元素
+     // 	})	
+     //  })
+
+     $(function(){
+     	$("#wrap>ul>li").hover(
+     		function(){
+     			$(this).children("ul").slideDown(); 
+     		},
+     		function(){
+     		$(this).children("ul").slideUp();      //slideUp的作用是隐藏元素
+  	});
+     })
+	</script>
+
+	</head>
+<body>
+	<div id="wrap">
+	  <ul>
+        <li>
+           <a href="javascript:;">一级菜单1</a>
+           <ul class="uu">
+				<li>二级菜单11</li>
+				<li>二级菜单12</li>
+				<li>二级菜单13</li>
+           </ul>
+        </li>
+        <li>
+           <a href="javascript:;">一级菜单2</a>
+           <ul class="uu">
+				<li>二级菜单21</li>
+				<li>二级菜单22</li>
+				<li>二级菜单23</li>
+           </ul>
+        </li>
+        <li>
+           <a href="javascript:;">一级菜单3</a>
+           <ul class="uu">
+				<li>二级菜单21</li>
+				<li>二级菜单22</li>
+				<li>二级菜单23</li>
+           </ul>
+        </li>
+	  </ul>
+	</div>
+</body>
+</html>

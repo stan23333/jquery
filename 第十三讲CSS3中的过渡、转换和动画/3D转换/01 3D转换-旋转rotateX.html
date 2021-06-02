@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS 3D转换</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+
+		/* 3d 转换 有三种方式 位置移动 大小缩放 旋转 */
+
+		.rotateX {
+			height: 226px;
+			padding-top: 100px;
+			text-align: center;
+			/* 透视 */
+			/*perspective: 500px;*/
+		}
+
+		.rotateX img {
+			transition: all 3s;
+			
+		}
+		
+		.rotateX:hover img {
+			 transform: rotateX(60deg); 	
+		}
+
+	</style>
+</head>
+<body>
+	<div class="rotateX">
+		<img src="./images/x.jpg" alt="">
+	</div>
+</body>
+</html>

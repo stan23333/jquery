@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 3D转换</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+		
+		/*父盒子*/
+		.preserve-3d {
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			position: relative;
+
+			perspective: 1000px;
+			transform-style: preserve-3d;
+		}
+
+		.rotateX {
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		.rotateX:nth-child(1) {
+			background-color: yellow;
+		}
+
+		.rotateX:nth-child(2) {
+			background-color: green;
+			transform: rotateX(60deg) skew(30deg, 0);
+			/*transform: rotateX(60deg);*/
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="preserve-3d">
+		<div class="rotateX"></div>
+		<div class="rotateX"></div>
+	</div>
+</body>
+</html>

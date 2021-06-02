@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>气泡</title>
+    <style>
+        .paopao {
+            width: 343px;
+            height: 120px;
+            margin: 40px auto;
+            /*background-image: url(./images/paopao.png);
+            background-repeat: no-repeat;
+            background-position: 0 0;*/
+            background: url(./images/paopao.png) 0 0 no-repeat,
+                        url(./images/paopao.png) right bottom;
+            background-color: pink;
+            border-radius: 10px;
+            transition: all 1s;
+        }
+        .paopao:hover {
+            /*background: url(./images/paopao.png) 0 bottom no-repeat,
+                        url(./images/paopao.png) right top;*/
+            background-color: blue;
+           
+            background-position: 0 bottom, right top; 
+        }
+    </style>
+</head>
+<body>
+    <div class="paopao"></div>
+</body>
+</html>

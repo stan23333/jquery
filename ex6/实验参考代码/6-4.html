@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>在jQuery原型上添加bgColor方法</title>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+     $(function(){
+     	//jQuery原型上添加方法
+      $.fn.bgColor = function(value){
+      // this是调用该方法的jQuery对象
+  	if(value==undefined)    this.css("backgroundColor");
+    else  this.css("backgroundColor",value);
+    return this;  //保证设置性操作后可以链式书写
+  }
+   $("h1").bgColor("yellow");   //设置颜色
+   console.log($("h1").bgColor());  //获取颜色
+    })
+	</script>
+</head>
+<body>
+	<h1>河南科技大学</h1>
+</body>
+</html>

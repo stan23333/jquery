@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 过渡</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+
+		.box {
+			width: 100%;
+			height: 200px;
+			position: relative;
+			background-color: pink;
+		}
+		.transition {
+			width: 200px;
+			height: 200px;
+			background-color: blue;
+            /*transition-property:left;
+            transition-duration:3s;
+            transition-timing-function:ease;
+            transition-delay:3s;*/
+			position: absolute;
+			left: 0;
+			top: 0;
+			/* 复合属性 */
+			transition: all 3s linear 3s;
+		}
+
+		/* 四个方面来定义过渡 */
+		/* 1、过渡的属性 transition-property */
+		/* 2、过渡的时长 transition-duration */
+		/* 3、过渡的延时 transition-delay */
+		/* 4、过渡的方式 transition-timing-function */
+		/*    a) linear */
+		/*    b) ease */
+		/*    c) ease-in */
+		/*    d) ease-out */
+		/*    f) ease-in-out */
+		.box:hover .transition {
+			left: 1000px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="transition"></div>
+	</div>	
+</body>
+</html>
